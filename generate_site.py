@@ -3,8 +3,17 @@ import random
 
 # Кольорові палітри та шрифти
 COLOR_PALETTES = [
-    {"primary": "#3498db", "secondary": "#2ecc71", "accent": "#e74c3c", "background": "#ecf0f1", "text": "#2c3e50"},
-    {"primary": "#9b59b6", "secondary": "#f1c40f", "accent": "#e67e22", "background": "#ffffff", "text": "#34495e"},
+    {"primary": "#3498db",
+     "secondary": "#2ecc71",
+     "accent": "#e74c3c",
+     "background": "#ecf0f1",
+     "text": "#2c3e50"},
+
+    {"primary": "#9b59b6",
+     "secondary": "#f1c40f",
+     "accent": "#e67e22",
+     "background": "#ffffff",
+     "text": "#34495e"},
 ]
 
 FONTS = [
@@ -17,7 +26,7 @@ FONTS = [
 SECTIONS = ["hero", "features", "contacts"]
 
 # Генерація index.html
-def generate_html(colors, font, layout_order):
+def generate_html(layout_order):
     html_content = f"""<!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -150,7 +159,7 @@ def main():
 
     # Генерація файлів
     with open("dist/index.html", "w", encoding="utf-8") as f:
-        f.write(generate_html(colors, font, layout_order))
+        f.write(generate_html(layout_order))
 
     with open("dist/styles.css", "w", encoding="utf-8") as f:
         f.write(generate_css(colors, font))
